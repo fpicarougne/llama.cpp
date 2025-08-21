@@ -58,3 +58,18 @@ set_target_properties  (${TARGET} PROPERTIES OUTPUT_NAME llama-mtmd-cli)
 install                (TARGETS ${TARGET} RUNTIME)
 target_link_libraries  (${TARGET} PRIVATE common mtmd Threads::Threads)
 target_compile_features(${TARGET} PRIVATE cxx_std_17)
+
+
+set(TARGET syllabus-cli)
+add_executable         (${TARGET} syllabus-cli.cpp)
+set_target_properties  (${TARGET} PROPERTIES OUTPUT_NAME syllabus-cli)
+install                (TARGETS ${TARGET} RUNTIME)
+target_link_libraries  (${TARGET} PRIVATE common mtmd Threads::Threads)
+target_compile_features(${TARGET} PRIVATE cxx_std_17)
+
+set(TARGET lib_llm)
+add_library            (${TARGET} lib-llm.cpp)
+set_target_properties  (${TARGET} PROPERTIES OUTPUT_NAME llm)
+install                (TARGETS ${TARGET} RUNTIME)
+target_link_libraries  (${TARGET} PRIVATE common mtmd Threads::Threads)
+target_compile_features(${TARGET} PRIVATE cxx_std_17)
